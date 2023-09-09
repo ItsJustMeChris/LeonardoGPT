@@ -14,9 +14,9 @@ export default {
         this.loading = true;
         const data = await $fetch("/api/generate", {
           method: "POST",
-          body: JSON.stringify({
+          body: {
             prompt: this.form.prompt,
-          }),
+          },
         });
 
         const generationsStore = useGenerationsStore();
