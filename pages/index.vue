@@ -17,9 +17,9 @@ export default {
   <GenerationForm class="mt-4 md:mt-16 lg:mt-16" />
   <div class="grid grid-cols-12 mt-4 md:mt-16 lg:mt-16 mb-16">
     <div class="col-span-12">
-      <div class="grid grid-cols-12 gap-4">
+      <div class="masonry sm:masonry-sm md:masonry-md">
         <GenerationCard
-          class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3"
+          class="break-inside mb-8"
           v-for="generation in generations"
           :key="generation.uuid"
           :generation="generation"
