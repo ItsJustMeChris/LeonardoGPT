@@ -43,8 +43,8 @@ export default {
     <!-- this hidden checkbox controls the state -->
     <input type="checkbox" />
 
-    <div class="swap-off">
-      <div class="card card-compact bg-neutral">
+    <div class="swap-off h-full">
+      <div class="h-full card card-compact">
         <div v-if="!loading" class="card-body !p-0">
           <figure v-if="images[0]">
             <img
@@ -69,9 +69,9 @@ export default {
         </div>
       </div>
     </div>
-    <div class="swap-on">
-      <div class="card card-compact bg-neutral">
-        <div v-if="!loading" class="card-body">
+    <div class="swap-on h-full">
+      <div class="h-full card card-compact bg-neutral">
+        <div v-if="!loading" class="card-body flex justify-center items-center">
           <div class="flex flex-col w-full border-opacity-50">
             <div>
               <p>{{ generation.request }}</p>

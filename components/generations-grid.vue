@@ -14,15 +14,13 @@ export default {
 </script>
 <template>
   <div class="grid grid-cols-12 mt-4 md:mt-16 lg:mt-16 mb-16">
-    <div class="col-span-12">
-      <div class="masonry sm:masonry-sm md:masonry-md">
-        <GenerationCard
-          class="break-inside mb-8"
-          v-for="generation in generations"
-          :key="generation.uuid"
-          :generation="generation"
-        />
-      </div>
+    <div class="grid grid-cols-12 gap-4 col-span-12">
+      <GenerationCard
+        class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 h-full"
+        v-for="generation in generations"
+        :key="generation.uuid"
+        :generation="generation"
+      />
     </div>
   </div>
 </template>
