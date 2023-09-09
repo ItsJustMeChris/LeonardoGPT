@@ -4,7 +4,7 @@ useHead({
   viewport: "width=device-width, initial-scale=1, maximum-scale=1",
   charset: "utf-8",
   htmlAttrs: { lang: "en" },
-  meta: [{ name: "description", content: "Leonardo GPT - Unity of Kings" }],
+  meta: [{ name: "description", content: "Leonardo GPT - a perfect friendship" }],
   link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
 });
 </script>
