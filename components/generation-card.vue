@@ -22,14 +22,18 @@ export default {
       });
     },
     async GetImage() {
-      const { images, pending } = await this.GetImages();
-      if (pending) {
-        setTimeout(() => {
-          this.GetImage();
-        }, 1000);
-      } else {
-        this.images = images;
-        this.loading = false;
+      try {
+        const { images, pending } = await this.GetImages();
+        if (pending) {
+          setTimeout(() => {
+            this.GetImage();
+          }, 1000);
+        } else {
+          this.images = images;
+          this.loading = false;
+        }
+      } catch (error) {
+        console.log(error);
       }
     },
   },
@@ -39,11 +43,8 @@ export default {
 };
 </script>
 <template>
-  <label class="swap swap-flip text-9xl">
-    <!-- this hidden checkbox controls the state -->
-    <input type="checkbox" />
-
-    <div class="swap-off h-full">
+  <FlipCard :on="Math.random() < 0.1">
+    <template #off>
       <div class="h-full card card-compact">
         <div v-if="!loading" class="card-body !p-0">
           <figure v-if="images[0]">
@@ -68,8 +69,8 @@ export default {
           <span class="loading loading-ring loading-lg"></span>
         </div>
       </div>
-    </div>
-    <div class="swap-on h-full">
+    </template>
+    <template #on>
       <div class="h-full card card-compact bg-neutral">
         <div v-if="!loading" class="card-body flex justify-center items-center">
           <div class="flex flex-col w-full border-opacity-50">
@@ -86,6 +87,6 @@ export default {
           <span class="loading loading-ring loading-lg"></span>
         </div>
       </div>
-    </div>
-  </label>
+    </template>
+  </FlipCard>
 </template>

@@ -8,7 +8,6 @@ export default {
   mounted() {
     const generationsStore = useGenerationsStore();
     this.generations = generationsStore.generations;
-    console.log(this.generations);
   },
 };
 </script>
