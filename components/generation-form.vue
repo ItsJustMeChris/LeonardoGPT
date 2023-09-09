@@ -32,7 +32,7 @@ export default {
 </script>
 
 <template>
-  <div class="grid grid-cols-12 mt-32">
+  <div class="grid grid-cols-12">
     <form
       @submit.prevent="submit"
       class="col-span-12 flex justify-center items-center align-middle"
