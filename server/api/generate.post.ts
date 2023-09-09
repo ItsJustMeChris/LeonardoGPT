@@ -353,18 +353,19 @@ Confusing and contradictory: Use words that are vague or inconsistent with each 
 
     const output = betweenTags[1];
 
-    // leo.auth(process.env.LEONARDO_AI_API_KEY);
-    // const { data } = await leo.createGeneration({
-    //   modelId: models.ABSOLUTE_REALITY,
-    //   prompt: output,
-    //   width: 512,
-    //   height: 768,
-    // });
+    leo.auth(process.env.LEONARDO_AI_API_KEY);
+    const { data } = await leo.createGeneration({
+      modelId: models.ABSOLUTE_REALITY,
+      prompt: output,
+      num_images: 1,
+      width: 512,
+      height: 768,
+    });
 
     return {
       request: userPrompt,
       prompt: output,
-      // id: data.sdGenerationJob.generationId,
+      id: data.sdGenerationJob.generationId,
     };
   } catch (error) {
     console.log(error);
