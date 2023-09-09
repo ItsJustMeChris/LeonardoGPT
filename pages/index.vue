@@ -15,7 +15,7 @@ export default {
 
 <template>
   <GenerationForm />
-  <div class="grid grid-cols-12 mt-16 mb-16">
+  <div class="grid grid-cols-12 mt-4 md:mt-16 lg:mt-16 mb-16">
     <div class="col-span-12">
       <div class="grid grid-cols-12 gap-4">
         <GenerationCard
