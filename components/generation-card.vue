@@ -45,7 +45,7 @@ export default {
 
     <div class="swap-off">
       <div class="card card-compact bg-neutral">
-        <div v-if="!loading" class="card-body">
+        <div v-if="!loading" class="card-body !p-0">
           <figure v-if="images[0]">
             <img
               class="rounded-2xl"
