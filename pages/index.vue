@@ -1,30 +1,15 @@
-<script>
-export default {
-  data() {
-    return {
-      generations: [],
-    };
-  },
-  mounted() {
-    const generationsStore = useGenerationsStore();
-    this.generations = generationsStore.generations;
-    console.log(this.generations);
-  },
-};
+<script setup>
+useHead({
+  title: "LeonardoGPT",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+  charset: "utf-8",
+  htmlAttrs: { lang: "en" },
+  meta: [{ name: "description", content: "Leonardo GPT - Unity of Kings" }],
+  link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
+});
 </script>
 
 <template>
   <GenerationForm class="mt-4 md:mt-16 lg:mt-16" />
-  <div class="grid grid-cols-12 mt-4 md:mt-16 lg:mt-16 mb-16">
-    <div class="col-span-12">
-      <div class="masonry sm:masonry-sm md:masonry-md">
-        <GenerationCard
-          class="break-inside mb-8"
-          v-for="generation in generations"
-          :key="generation.uuid"
-          :generation="generation"
-        />
-      </div>
-    </div>
-  </div>
+  <GenerationsGrid />
 </template>
