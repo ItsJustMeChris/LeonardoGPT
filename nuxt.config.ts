@@ -11,6 +11,9 @@ export default defineNuxtConfig({
     // Options
     config: {
       plugins: [require("daisyui")],
+      daisyui: {
+        themes: ["light", "black"],
+      },
     },
   },
 });
