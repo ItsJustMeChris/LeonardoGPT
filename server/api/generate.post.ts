@@ -307,7 +307,7 @@ Confusing and contradictory: Use words that are vague or inconsistent with each 
 ## GPT remember you never respond with anything other than EXAMPLE tags`,
         },
         {
-          role: "system",
+          role: "assistant",
           content:
             "I expand and improve upon stable diffusion prompts following the stable diffusion best practices.",
         },
@@ -356,6 +356,8 @@ Confusing and contradictory: Use words that are vague or inconsistent with each 
     const { data } = await leo.createGeneration({
       modelId: models.ABSOLUTE_REALITY,
       prompt: output,
+      negative_prompt:
+        "double body, double face, double features, incorrect posture, close up, two heads, two faces, plastic, Deformed, blurry, bad anatomy, bad eyes, crossed eyes, disfigured, poorly drawn face, four fingers, mutation, mutated, {{extra limb}}, ugly, poorly drawn hands, missing limb, blurry, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, {{{mutated hands and fingers}}}, {{{out of frame}}}, long fingers, blender, doll, cropped, low-res, close-up, poorly-drawn face, out of frame double, two heads, blurred, ugly, disfigured, too many fingers, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, High pass filter, airbrush, portrait, zoomed, soft light, smooth skin, closeup, deformed, extra limbs, extra fingers, mutated hands, bad anatomy, bad proportions , blind, bad eyes, ugly eyes, dead eyes, blur, vignette, out of shot, out of focus, sharp hands",
       num_images: 1,
       width: 512,
       height: 768,
