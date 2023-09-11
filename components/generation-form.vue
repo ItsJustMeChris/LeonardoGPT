@@ -39,16 +39,13 @@ export default {
       @submit.prevent="submit"
       class="col-span-12 flex justify-center items-center align-middle grid grid-cols-12 gap-4"
     >
-      <div class="form-control col-span-4 lg:col-span-2">
-        <select
-          v-model="form.model"
-          class="select select-bordered w-full max-w-xs"
-        >
+      <div class="form-control col-span-12 md:col-span-4 lg:col-span-2">
+        <select v-model="form.model" class="select select-bordered w-full">
           <option value="ABSOLUTE_REALITY">Absolute Reality</option>
           <option value="DREAM_SHAPER">Dream Shaper</option>
         </select>
       </div>
-      <div class="form-control col-span-8 lg:col-span-10">
+      <div class="form-control col-span-12 md:col-span-8 lg:col-span-10">
         <div class="input-group w-full">
           <input
             v-model="form.prompt"
