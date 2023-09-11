@@ -43,6 +43,8 @@ export default {
         <select v-model="form.model" class="select select-bordered w-full">
           <option value="ABSOLUTE_REALITY">Absolute Reality</option>
           <option value="DREAM_SHAPER">Dream Shaper</option>
+          <option value="ILLUSTRATOR">Illustration</option>
+          <option value="3D_ANIMATION">3D Animation</option>
         </select>
       </div>
       <div class="form-control col-span-12 md:col-span-8 lg:col-span-10">

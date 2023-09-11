@@ -5,6 +5,8 @@ const leo = api("@leonardoai/v1.0#3vp6l34lm4ans46");
 const models = {
   ABSOLUTE_REALITY: "e316348f-7773-490e-adcd-46757c738eb7",
   DREAM_SHAPER: "ac614f96-1082-45bf-be9d-757f2d31c174",
+  ILLUSTRATOR: "fc42c4b3-1b19-44b7-b9fa-4d3d018af689",
+  "3D_ANIMATION": "d69c8273-6b17-4a30-a13e-d6637ae1c644",
 };
 
 export default defineEventHandler(async (event) => {
