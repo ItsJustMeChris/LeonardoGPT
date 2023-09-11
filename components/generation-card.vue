@@ -48,7 +48,12 @@ export default {
       <div class="h-full card card-compact">
         <div v-if="!loading" class="card-body !p-0">
           <figure v-if="images[0]">
-            <img class="" :src="images[0].url" :alt="generation.request" />
+            <img
+              width="512"
+              height="768"
+              :src="images[0].url"
+              :alt="generation.request"
+            />
           </figure>
 
           <div v-else class="flex flex-col w-full border-opacity-50">
