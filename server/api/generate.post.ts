@@ -334,7 +334,6 @@ Confusing and contradictory: Use words that are vague or inconsistent with each 
       choice.content === "" ||
       !choice.content.includes("<PROMPT>")
     ) {
-      console.log(gptResponse.choices);
       return sendError(
         event,
         createError({ statusCode: 401, message: "No Generations" })

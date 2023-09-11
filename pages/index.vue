@@ -11,7 +11,6 @@ if (process.client) {
             "data-theme": "black",
           },
         });
-        console.log("GO DARK");
       } else {
         storage.theme = "light";
         useHead({
@@ -19,7 +18,6 @@ if (process.client) {
             "data-theme": "light",
           },
         });
-        console.log("GO LIGHT");
       }
     });
 }
