@@ -15,6 +15,7 @@ export default defineEventHandler(async (event) => {
     });
 
     const userPrompt = body.prompt;
+    const model: string = body.model;
 
     const gptResponse = await openai.chat.completions.create({
       model: "gpt-3.5-turbo-16k",
@@ -352,9 +353,11 @@ Confusing and contradictory: Use words that are vague or inconsistent with each 
 
     const output = betweenTags[1];
 
+    const leoModel: string = (models as any)[model];
+
     leo.auth(process.env.LEONARDO_AI_API_KEY);
     const { data } = await leo.createGeneration({
-      modelId: models.ABSOLUTE_REALITY,
+      modelId: leoModel,
       prompt: output,
       negative_prompt:
         "double body, double face, double features, incorrect posture, close up, two heads, two faces, plastic, Deformed, blurry, bad anatomy, bad eyes, crossed eyes, disfigured, poorly drawn face, four fingers, mutation, mutated, {{extra limb}}, ugly, poorly drawn hands, missing limb, blurry, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, {{{mutated hands and fingers}}}, {{{out of frame}}}, long fingers, blender, doll, cropped, low-res, close-up, poorly-drawn face, out of frame double, two heads, blurred, ugly, disfigured, too many fingers, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, High pass filter, airbrush, portrait, zoomed, soft light, smooth skin, closeup, deformed, extra limbs, extra fingers, mutated hands, bad anatomy, bad proportions , blind, bad eyes, ugly eyes, dead eyes, blur, vignette, out of shot, out of focus, sharp hands",

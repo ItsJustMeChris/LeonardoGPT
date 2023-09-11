@@ -4,6 +4,7 @@ export default {
     return {
       form: {
         prompt: "",
+        model: "ABSOLUTE_REALITY",
       },
       loading: false,
     };
@@ -16,6 +17,7 @@ export default {
           method: "POST",
           body: {
             prompt: this.form.prompt,
+            model: this.form.model,
           },
         });
 
@@ -32,12 +34,21 @@ export default {
 </script>
 
 <template>
-  <div class="grid grid-cols-12">
+  <div class="grid grid-cols-12 gap-4">
     <form
       @submit.prevent="submit"
-      class="col-span-12 flex justify-center items-center align-middle"
+      class="col-span-12 flex justify-center items-center align-middle grid grid-cols-12 gap-4"
     >
-      <div class="form-control w-full md:w-2/3 lg:w-1/2">
+      <div class="form-control col-span-4 lg:col-span-2">
+        <select
+          v-model="form.model"
+          class="select select-bordered w-full max-w-xs"
+        >
+          <option value="ABSOLUTE_REALITY">Absolute Reality</option>
+          <option value="DREAM_SHAPER">Dream Shaper</option>
+        </select>
+      </div>
+      <div class="form-control col-span-8 lg:col-span-10">
         <div class="input-group w-full">
           <input
             v-model="form.prompt"
@@ -47,7 +58,7 @@ export default {
           />
           <button :disabled="loading" class="btn" type="submit">
             <span v-if="loading" class="loading loading-dots loading-md"></span>
-            <span class="bg-inherit" v-else>Generate</span>
+            <span class="bg-inherit uppercase" v-else>Generate</span>
           </button>
         </div>
       </div>
