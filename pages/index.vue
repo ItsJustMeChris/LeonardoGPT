@@ -38,7 +38,13 @@ useHead({
   meta: [
     { name: "description", content: "Leonardo GPT - a perfect friendship" },
   ],
-  link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
+  link: [
+    { rel: "icon", type: "image/png", href: "/favicon.png" },
+    {
+      rel: "preconnect",
+      href: "https://cdn.leonardo.ai",
+    },
+  ],
 });
 </script>
 
